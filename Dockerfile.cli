@@ -1,0 +1,14 @@
+FROM mcr.microsoft.com/dotnet/sdk:10.0-preview AS build
+WORKDIR /src
+COPY src/CafePromenade.Core/CafePromenade.Core.csproj src/CafePromenade.Core/
+COPY src/CafePromenade.CLI/CafePromenade.CLI.csproj src/CafePromenade.CLI/
+COPY CafePromenade-SuperApp.sln .
+RUN dotnet restore
+COPY src/ src/
+RUN dotnet publish src/CafePromenade.CLI/CafePromenade.CLI.csproj -c Release -o /app/publish --no-restore
+
+FROM mcr.microsoft.com/dotnet/runtime:10.0-preview
+WORKDIR /app
+RUN apt-get update && apt-get install -y git curl gh && rm -rf /var/lib/apt/lists/*
+COPY --from=build /app/publish .
+ENTRYPOINT ["dotnet", "CafePromenade.CLI.dll"]

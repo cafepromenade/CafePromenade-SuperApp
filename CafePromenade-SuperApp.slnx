@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/CafePromenade.CLI/CafePromenade.CLI.csproj" />
+    <Project Path="src/CafePromenade.Core/CafePromenade.Core.csproj" />
+    <Project Path="src/CafePromenade.Desktop/CafePromenade.Desktop.csproj" />
+    <Project Path="src/CafePromenade.TUI/CafePromenade.TUI.csproj" />
+    <Project Path="src/CafePromenade.Web/CafePromenade.Web.csproj" />
+  </Folder>
+</Solution>

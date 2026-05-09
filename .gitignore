@@ -1,0 +1,116 @@
+## .NET
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.dll
+*.exe
+*.pdb
+*.nupkg
+*.snupkg
+project.lock.json
+*.nuget.props
+*.nuget.targets
+
+## Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+## Visual Studio
+.vs/
+*.sln.docstates
+*.rsuser
+*.sln.ide/
+*.suo
+*.user
+*.userosscache
+*.sln.ide
+
+## Rider
+.idea/
+*.sln.iml
+
+## VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+## NuGet
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+
+## OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+## Docker
+.docker/
+docker-compose.override.yml
+
+## Cloned repos (managed by the app)
+repos/
+
+## User-specific
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.ide
+
+## Logs
+*.log
+logs/
+
+## Temp
+tmp/
+temp/
+*.tmp
+*.temp
+
+## Secrets (NEVER commit)
+.env
+*.env
+appsettings.*.local.json
+secrets/
+credentials/
+*.pem
+*.key
+*.pfx
+*.cert
+
+## WindowsAppSDK build artifacts
+AppPackages/
+BundleArtifacts/
+*.msix
+*.appx
+
+## Publish output
+publish/
+PublishOutput/
+
+## Test results
+TestResults/
+*.trx
+coverage/
+
+## Backup
+*.bak
+*.backup

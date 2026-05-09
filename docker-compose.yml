@@ -1,0 +1,47 @@
+services:
+  superapp-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cafepromenade-api
+    ports:
+      - "5180:5180"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:5180
+    volumes:
+      - repos-data:/app/repos
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5180/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  superapp-cli:
+    build:
+      context: .
+      dockerfile: Dockerfile.cli
+    container_name: cafepromenade-cli
+    volumes:
+      - repos-data:/app/repos
+    stdin_open: true
+    tty: true
+    profiles:
+      - cli
+
+  superapp-tui:
+    build:
+      context: .
+      dockerfile: Dockerfile.tui
+    container_name: cafepromenade-tui
+    volumes:
+      - repos-data:/app/repos
+    stdin_open: true
+    tty: true
+    profiles:
+      - tui
+
+volumes:
+  repos-data:
